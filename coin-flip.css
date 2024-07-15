@@ -1,0 +1,85 @@
+
+body{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, rgb(242,112,156), rgb(255,148,114));
+}
+
+.container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    padding: 1rem;
+    background-color: skyblue;
+}
+
+#coin{
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem 0rem; 
+    transform-style: preserve-3d;
+}
+
+#coin div{
+    width: 100%;
+    height: 100%;
+    border: 2px solid black; /*two black box*/
+    border-radius: 50%; /*black box converts to balc circle*/
+    backface-visibility: hidden;
+    background-size: contain;
+    position: absolute; /*both circles overlap. We need two images at same place so two circles overlap*/
+}
+
+.headsClass{
+    background-image: url("https://en.numista.com/catalogue/photos/inde/3239-original.jpg");  
+   
+}
+
+.animate-heads{
+    animation: flipHeads 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipHeads {
+
+    from{
+        transform: rotateY(0deg);
+    }
+
+    to{
+        transform: rotateY(1800deg);
+    }
+    
+}
+
+.tailsClass{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0f/Indian_20_Rupee_coin.png");
+
+    transform: rotateY(-180deg);
+
+}
+
+.animate-tails{
+    animation: flipTails 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes flipTails {
+
+    from{
+        transform: rotateY(0deg);
+    }
+
+    to{
+        transform: rotateY(1620deg);
+    }
+    
+}
